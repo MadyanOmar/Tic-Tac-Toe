@@ -33,17 +33,17 @@ public class Result {
 		Stage stage = new Stage();
 		Pane pane = new Pane();
 		Scene scene = new Scene(pane,305,300);
-		Image win = new Image(imgpath);
+		Image result = new Image(imgpath);
 		Image background = new Image("/background.jpg");
 		ImageView backgroundV = new ImageView(background);
-		ImageView winv = new ImageView(win);
-		winv.setLayoutX(x_pos);
-		winv.setLayoutY(y_pos);
+		ImageView resultv = new ImageView(result);
+		resultv.setLayoutX(x_pos);
+		resultv.setLayoutY(y_pos);
 		Image icon = new Image("/fileicon.png");
 		Button exit = new Button("Exit");
 		Button stats = new Button("View Stats");
 		Button start = new Button("Play Again");
-		FadeTransition ft = new FadeTransition(Duration.millis(1000), winv);
+		FadeTransition ft = new FadeTransition(Duration.millis(1000), resultv);
 		ft.setFromValue(0.0);
 		ft.setToValue(1.0);
 		ft.setCycleCount(1);
@@ -75,7 +75,7 @@ public class Result {
 		});
 		
 		pane.getChildren().add(backgroundV);
-		pane.getChildren().add(winv);
+		pane.getChildren().add(resultv);
 		pane.getChildren().add(stats);
 		pane.getChildren().add(start);
 		pane.getChildren().add(exit);
